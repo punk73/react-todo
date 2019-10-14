@@ -1,10 +1,10 @@
 
 import React from 'react';
 
-const Todos = ({todos}) => {
+const Todos = ({todos, deleteTodo }) => {
     const TodoList = todos.map(todo => {
         return (
-            <div className="collection-item" key={todo.id}>
+            <div className="collection-item" onClick={(e) => { deleteTodo(todo.id) }} key={todo.id}>
                 {todo.content}
             </div>
         )
